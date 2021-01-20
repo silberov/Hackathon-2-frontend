@@ -23,6 +23,12 @@ const FONT_WEIGHT_MODIFIERS = {
     `
   }
 
+  const LIST_TYPE_MODIFIERS = {
+    line: () => css`
+    display: inline;
+    `
+  }
+
 export const MainHeader = styled.h1`
   font-family: ${primaryFont};
   font-size: 3.25rem;
@@ -39,6 +45,8 @@ export const MainHeader = styled.h1`
 
 export const Healine = styled.h2`
   font-family: ${primaryFont};
+  display: block;
+  border-bottom: 1px soild #cdcdcd;
   font-size: 1rem;
   line-height: 1.25;
   letter-spacing: 0.2px;
@@ -51,18 +59,39 @@ export const Healine = styled.h2`
 `;
 
 
-export const SubHealine = styled.h3`
+export const SubHeader= styled.h3`
   font-family: ${primaryFont};
-  font-size: 3.25rem;
+  font-size: 3rem;
   line-height: 1.25;
-  letter-spacing: 0.3px;
+  letter-spacing: .2px;
   font-weight: 700;
   text-align: left;
+  padding-bottom: 10px;
   color: ${colors.primeryGray};
   margin: ${(props) => (props.margin ? props.margin : 0)};
   ${applyStyleModifiers(FONT_WEIGHT_MODIFIERS)};
   ${applyStyleModifiers(ALIGNMENT_MODIFIERS)};
 `;
+
+export const ListSingleLine = styled.ul`
+    text-align: left;
+    /* display: flex;
+
+    align-content: flex-start; */
+    `
+
+export const ListElements = styled.li`
+    font-size: 1.2rem;
+    list-style-type: none;
+    line-height: 1.5;
+    color: ${colors.text};
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    ${applyStyleModifiers(LIST_TYPE_MODIFIERS)};
+`
 
 export const P = styled.p`
     font-size: 1.2rem;
