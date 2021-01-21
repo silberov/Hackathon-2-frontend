@@ -22,7 +22,6 @@ export function List ({title, elements, isLine}){
         }
     }
     const list = listBuilder()
-    console.log(list)
     return(
         <ListWrap>
             <SubHeader>{title}</SubHeader>
