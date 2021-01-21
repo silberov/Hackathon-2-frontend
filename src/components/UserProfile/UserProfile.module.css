@@ -1,0 +1,32 @@
+.UserProfile {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: dense;
+  width: 100%;
+  background-color: yellow;
+  justify-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  grid-column: span 3;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  grid-column: span 3;
+}
+
+.mainStart {
+  width: 100%;
+  background-color: gray;
+}
+.mainCenter {
+  width: 100%;
+  background-color: orange;
+}

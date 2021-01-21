@@ -1,0 +1,13 @@
+.title {
+  display: subgrid;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.skillsWrapper {
+  display: inline-grid;
+}
+
+.skillsMain {
+  padding: 0.5rem 0.5rem;
+}

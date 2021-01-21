@@ -5,6 +5,9 @@ import { List } from "./components/List/List";
 import Personal from "./components/Personal/Personal";
 import Profile from "./pages/Profile";
 
+import { UserProfile } from "./components/UserProfile/UserProfile.component";
+
+
 const user = {
   id: 4,
   name: "Robert",
@@ -78,8 +81,13 @@ const user = {
 function App() {
   return (
     <div className="App">
-      <Profile person={user} />
 
+      <Profile person={user} />
+      <UserProfile />
+      <Details
+        headline={"contact info"}
+        elements={["+49 65 456 456", "esra@company.com"]}
+      />
     </div>
   );
 }
