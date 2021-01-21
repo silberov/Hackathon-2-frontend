@@ -1,5 +1,5 @@
 import './App.css';
-import { LineList, List } from './components/List/List';
+import { List } from './components/List/List';
 
 function App() {
   return (
@@ -20,13 +20,6 @@ fishing license
 "Projektron",
 "Maconomy"]} />
 <List isLine={false} title={"Software"} elements={["Figma","Miro", "Keynote",
-"MS Office",
-"Jira",
-"Resource Guru",
-"Merlin",
-"Projektron",
-"Maconomy"]} />
-<LineList title={"Software"} elements={["Figma","Miro", "Keynote",
 "MS Office",
 "Jira",
 "Resource Guru",
