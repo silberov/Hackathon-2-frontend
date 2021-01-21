@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ListElements, ListContainer, SubHeader } from "../Typography"
 
 const ListWrap = styled.div`
-    margin: 20px 40px;
+    margin: 0 50px 10px 0;
 `;
 
 export function List ({title, elements, isLine}){
