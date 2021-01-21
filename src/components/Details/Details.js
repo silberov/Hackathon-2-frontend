@@ -6,13 +6,13 @@ const DetailsWrap = styled.div`
 `
 
 function Details({headline, elements}) {
-    console.log(elements);
+    // console.log(elements);
     return(
         <DetailsWrap>
-            {/* <Healine>{headline}</Healine>
+            <Healine>{headline}</Healine>
             <ListContainer>
                 {elements.map(item => <ListElements>{item}</ListElements>)}
-            </ListContainer> */}
+            </ListContainer>
         </DetailsWrap>
     );
 }

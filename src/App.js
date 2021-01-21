@@ -45,8 +45,7 @@ const user = {
       "BVG",
     ],
   },
-  skill: [
-    {
+  skill:{
       Software: [
         "Figma",
         "Miro",
@@ -58,8 +57,6 @@ const user = {
         "Projektron",
         "Maconomy",
       ],
-    },
-    {
       Professional: [
         "UX/UI",
         "Webesite Konzeption",
@@ -70,11 +67,10 @@ const user = {
         "Tracking",
         "CMS",
       ],
-    },
-    {
+
       Languages: ["Englisch", "Französisch", "Türkisch"],
     },
-  ],
+
   education: ["BWL, Management"],
   hobby: ["paly games", "workout", "paint", "read books"],
 };
@@ -83,12 +79,7 @@ function App() {
   return (
     <div className="App">
       <Profile person={user} />
-      {/* <Personal data={datapersonal} />
-      
-      <Category data={categorydata} oneLine={false}/>
-      
 
-      <Category data={categorydata} oneLine={true}/> */}
     </div>
   );
 }

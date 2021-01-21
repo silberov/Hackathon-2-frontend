@@ -8,18 +8,15 @@ const ProfileImg = styled.img`
 `
 
 
-function Personal ({name}) {
-    
-    // const titles = Object.keys(data)
-    // console.log(data[titles[3]])
+function Personal ({name, details}) {
+//console.log(Object.keys(details)[0],details[Object.keys(details)[0]] );
     return(
         <>
         <ProfileImg />
         <P modifiers={["primery","bold"]}>{name}</P>
-        {/* <Details elements={data[titles[3]]} headline={titles[3]} />
-        <Details elements={data[titles[4]]} headline={titles[4]+ "info"} />
-        <Details elements={data[titles[5]]} headline={titles[5]} /> */}
-        
+        <Details headline={Object.keys(details)[0]} elements={details[Object.keys(details)[0]]}/>
+        <Details headline={Object.keys(details)[1]} elements={details[Object.keys(details)[1]]}/>
+        <Details headline={Object.keys(details)[2]} elements={details[Object.keys(details)[2]]}/>
         </>
     );
 
