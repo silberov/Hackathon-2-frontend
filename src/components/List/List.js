@@ -32,20 +32,6 @@ export function List ({title, elements, isLine}){
         </ListWrap>
 
     );
-
-    //isLine && modifiers={["line"]}
 }
 
-
-// export function LineList ({title, elements}){
-//     return(
-//         <ListWrap>
-//             <SubHeader>{title}</SubHeader>
-//             <ListSingleLine>
-//                 {elements.map(item => <ListElements modifiers={["line"]}>{item}, </ListElements>)}
-//             </ListSingleLine>
-//         </ListWrap>
-
-//     );
-// }
 
