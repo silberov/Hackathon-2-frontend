@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ListElements, ListSingleLine, SubHeader } from "../Typography"
+import { ListElements, ListContainer, SubHeader } from "../Typography"
 
 const ListWrap = styled.div`
     margin: 20px 40px;
@@ -26,9 +26,9 @@ export function List ({title, elements, isLine}){
     return(
         <ListWrap>
             <SubHeader>{title}</SubHeader>
-            <ListSingleLine>
+            <ListContainer>
                 {list.map(item => <ListElements modifiers={isLine && ["line"]} >{item}</ListElements>)}
-            </ListSingleLine>
+            </ListContainer>
         </ListWrap>
 
     );

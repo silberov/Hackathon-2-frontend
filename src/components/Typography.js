@@ -45,6 +45,7 @@ export const MainHeader = styled.h1`
 
 export const Healine = styled.h2`
   font-family: ${primaryFont};
+  padding: 15px 0;
   display: block;
   border-bottom: 1px soild #cdcdcd;
   font-size: 1rem;
@@ -52,7 +53,7 @@ export const Healine = styled.h2`
   letter-spacing: 0.2px;
   font-weight: 700;
   text-align: left;
-  color: ${colors.text};
+  color: ${colors.lightGray};
   margin: ${(props) => (props.margin ? props.margin : 0)};
   ${applyStyleModifiers(FONT_WEIGHT_MODIFIERS)};
   ${applyStyleModifiers(ALIGNMENT_MODIFIERS)};
@@ -73,7 +74,7 @@ export const SubHeader= styled.h3`
   ${applyStyleModifiers(ALIGNMENT_MODIFIERS)};
 `;
 
-export const ListSingleLine = styled.ul`
+export const ListContainer = styled.ul`
     text-align: left;
     /* display: flex;
 
