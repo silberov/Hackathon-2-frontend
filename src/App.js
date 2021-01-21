@@ -2,6 +2,7 @@ import "./App.css";
 import Category from "./components/Category/Category";
 import Details from "./components/Details/Details";
 import { List } from "./components/List/List";
+import { UserProfile } from "./components/UserProfile/UserProfile.component";
 
 const data = {
   categoryname: "skills",
@@ -43,15 +44,14 @@ const data = {
 function App() {
   return (
     <div className="App">
+      <UserProfile />
       <Details
         headline={"contact info"}
         elements={["+49 65 456 456", "esra@company.com"]}
       />
-      <Category data={data} oneLine={false}/>
-      
+      <Category data={data} oneLine={false} />
 
-      <Category data={data} oneLine={true}/>
-      
+      <Category data={data} oneLine={true} />
     </div>
   );
 }
