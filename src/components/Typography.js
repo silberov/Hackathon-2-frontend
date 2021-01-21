@@ -17,6 +17,18 @@ const FONT_WEIGHT_MODIFIERS = {
     `,
   };
 
+  const COLOR_MODIFIERS = {
+      light: () => css`
+       color: ${colors.lightGray};
+      `,
+      text: () => css`
+      color: ${colors.text};
+      `,
+      primery: () => css`
+      color: ${colors.primeryGray};
+      `
+  }
+
   const ALIGNMENT_MODIFIERS = {
     center: () => css`
     text-align: center;
@@ -45,7 +57,7 @@ export const MainHeader = styled.h1`
 
 export const Healine = styled.h2`
   font-family: ${primaryFont};
-  padding: 15px 0;
+  padding: 7px 0;
   display: block;
   border-bottom: 1px soild #cdcdcd;
   font-size: 1rem;
@@ -57,6 +69,7 @@ export const Healine = styled.h2`
   margin: ${(props) => (props.margin ? props.margin : 0)};
   ${applyStyleModifiers(FONT_WEIGHT_MODIFIERS)};
   ${applyStyleModifiers(ALIGNMENT_MODIFIERS)};
+  ${applyStyleModifiers(COLOR_MODIFIERS)};
 `;
 
 
