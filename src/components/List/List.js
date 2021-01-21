@@ -6,10 +6,9 @@ const ListWrap = styled.div`
 `;
 
 export function List ({data, isLine}){
-    console.log(data)
-    const title = Object.keys(data);
+    //console.log(data)
+    const title = Object.keys(data)[0];
     const elements = Object.values(data)[0];
-    //title, elements
     const listBuilder = () => {
         if (isLine && elements.length > 1) {
             let newArray = [];
@@ -25,7 +24,7 @@ export function List ({data, isLine}){
             return elements;
         }
     }
-    console.log(title, elements, isLine)
+    //console.log(title, elements, isLine)
     const list = listBuilder()
     return(
         <ListWrap>

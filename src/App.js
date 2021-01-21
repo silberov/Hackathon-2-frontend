@@ -16,7 +16,7 @@ const user = {
   office: "Berlin",
   position: "Trainee Social Media Manager",
   positionId: 2,
-  experience: {
+  experience: [{
     industries: [
       "politics",
       "associations",
@@ -26,8 +26,8 @@ const user = {
       "ministries",
       "tourism",
       "energy",
-    ],
-    Clients: [
+    ]},
+    {Clients: [
       "BVR",
       "DZ-Bank",
       "Share",
@@ -43,9 +43,9 @@ const user = {
       "Bayer",
       "IWO",
       "BVG",
-    ],
-  },
-  skill:{
+    ]},
+  ],
+  skill:[{
       Software: [
         "Figma",
         "Miro",
@@ -56,8 +56,8 @@ const user = {
         "Merlin",
         "Projektron",
         "Maconomy",
-      ],
-      Professional: [
+      ]},
+      {Professional: [
         "UX/UI",
         "Webesite Konzeption",
         "Webesite Launch",
@@ -66,10 +66,10 @@ const user = {
         "Agile Prozesse",
         "Tracking",
         "CMS",
-      ],
+      ]},
 
-      Languages: ["Englisch", "Französisch", "Türkisch"],
-    },
+      {Languages: ["Englisch", "Französisch", "Türkisch"]},
+    ],
 
   education: ["BWL, Management"],
   hobby: ["paly games", "workout", "paint", "read books"],
