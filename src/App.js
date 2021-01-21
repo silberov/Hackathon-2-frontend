@@ -1,4 +1,5 @@
 import './App.css';
+import Details from './components/Details/Details';
 import { List } from './components/List/List';
 
 function App() {
@@ -26,6 +27,7 @@ fishing license
 "Merlin",
 "Projektron",
 "Maconomy"]} />
+      <Details headline={"contact info"} elements={["+49 65 456 456", "esra@company.com"]} />
     </div>
   );
 }
