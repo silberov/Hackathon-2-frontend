@@ -2,10 +2,13 @@ import styled from "styled-components";
 import { ListElements, ListContainer, SubHeader } from "../Typography"
 
 const ListWrap = styled.div`
-    margin: 20px 40px;
+    margin: 0 50px 10px 0;
 `;
 
-export function List ({title, elements, isLine}){
+export function List ({data, isLine}){
+    //console.log(data)
+    const title = Object.keys(data)[0];
+    const elements = Object.values(data)[0];
     const listBuilder = () => {
         if (isLine && elements.length > 1) {
             let newArray = [];
@@ -21,6 +24,7 @@ export function List ({title, elements, isLine}){
             return elements;
         }
     }
+    //console.log(title, elements, isLine)
     const list = listBuilder()
     return(
         <ListWrap>
