@@ -6,11 +6,28 @@ const ListWrap = styled.div`
 `;
 
 export function List ({title, elements, isLine}){
+    const listBuilder = () => {
+        if (isLine && elements.length > 1) {
+            let newArray = [];
+            let i = 0;
+            do {
+                newArray.push(elements[i]+ ", ")
+                i++
+            }
+            while (i < elements.length - 1);
+            newArray.push(elements[i]+".")
+            return newArray;
+        } else {
+            return elements;
+        }
+    }
+    const list = listBuilder()
+    console.log(list)
     return(
         <ListWrap>
             <SubHeader>{title}</SubHeader>
             <ListSingleLine>
-                {elements.map(item => <ListElements >{isLine ? item + ", " : item}</ListElements>)}
+                {list.map(item => <ListElements modifiers={isLine && ["line"]} >{item}</ListElements>)}
             </ListSingleLine>
         </ListWrap>
 
@@ -20,15 +37,15 @@ export function List ({title, elements, isLine}){
 }
 
 
-export function LineList ({title, elements}){
-    return(
-        <ListWrap>
-            <SubHeader>{title}</SubHeader>
-            <ListSingleLine>
-                {elements.map(item => <ListElements modifiers={["line"]}>{item}, </ListElements>)}
-            </ListSingleLine>
-        </ListWrap>
+// export function LineList ({title, elements}){
+//     return(
+//         <ListWrap>
+//             <SubHeader>{title}</SubHeader>
+//             <ListSingleLine>
+//                 {elements.map(item => <ListElements modifiers={["line"]}>{item}, </ListElements>)}
+//             </ListSingleLine>
+//         </ListWrap>
 
-    );
-}
+//     );
+// }
 
