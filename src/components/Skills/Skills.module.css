@@ -2,12 +2,22 @@
   display: subgrid;
   grid-column-start: 1;
   grid-column-end: 3;
+  text-align: start;
 }
 
 .skillsWrapper {
   display: inline-grid;
 }
 
-.skillsMain {
+.skillsMainLang {
+  background-color: lightgoldenrodyellow;
+  padding: 0.5rem 0.5rem;
+}
+.skillsMainProf {
+  background-color: lightgoldenrodyellow;
+  padding: 0.5rem 0.5rem;
+}
+.skillsMainSoft {
+  background-color: lightgoldenrodyellow;
   padding: 0.5rem 0.5rem;
 }

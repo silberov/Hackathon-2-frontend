@@ -1,63 +1,43 @@
 import React from "react";
-import {
-  DiIllustrator,
-  DiCss3,
-  DiPhotoshop,
-  DiJavascript1,
-  DiReact,
-} from "react-icons/di";
+import Flag from "react-flagkit";
 import { ProgressBar } from "../ProgressBar/ProgressBar.component";
 import styles from "./Skills.module.css";
 
 export const SkillsLanguages = (props) => {
   const { title } = props;
-  const [rate1, color1] = ["20%", "#bea7f3"];
-  const [rate2, color2] = ["40%", "#a17ff1"];
-  const [rate3, color3] = ["60%", "#8c62ec"];
-  const [rate4, color4] = ["80%", "#7c4bec"];
-  const [rate5, color5] = ["99%", "#652de1"];
+  const [rate1, color1] = ["20%", "#ffc100"];
+  const [rate2, color2] = ["40%", "#ff9a00"];
+  const [rate3, color3] = ["60%", "#ff7400"];
+  const [rate4, color4] = ["80%", "#ff4d00"];
+  const [rate5, color5] = ["99%", "#ff0000"];
 
   return (
-    <div className={styles.skillsMain}>
+    <div className={styles.skillsMainLang}>
       <div className={styles.skillsWrapper}>
         <div className={styles.title}> {title} </div>
         <div>
           <ProgressBar
             color={color1}
-            icon={<DiIllustrator />}
+            icon={<Flag country="DE" title="German" />}
             percentage={rate1}
           />
           <ProgressBar
             color={color2}
-            icon={<DiPhotoshop />}
+            icon={<Flag country="GB" title="English" />}
             percentage={rate2}
           />
-          <ProgressBar
-            color={color5}
-            icon={<DiJavascript1 />}
-            percentage={rate5}
-          />
-          <ProgressBar color={color3} icon={<DiReact />} percentage={rate3} />
-          <ProgressBar color={color4} icon={<DiCss3 />} percentage={rate4} />
         </div>
         <div>
           <ProgressBar
             color={color1}
-            icon={<DiIllustrator />}
+            icon={<Flag country="FR" title="French" />}
             percentage={rate1}
           />
           <ProgressBar
             color={color2}
-            icon={<DiPhotoshop />}
+            icon={<Flag country="SA" title="Arabic" />}
             percentage={rate2}
           />
-          <ProgressBar
-            color={color5}
-            icon={<DiJavascript1 />}
-            percentage={rate5}
-          />
-          <ProgressBar color={color3} icon={<DiReact />} percentage={rate3} />
-          <ProgressBar color={color4} icon={<DiCss3 />} percentage={rate4} />
         </div>
       </div>
     </div>
