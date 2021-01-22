@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ProgressBar.module.css";
 
 export const ProgressBar = (props) => {
-  const { color, percentage, icon } = props;
+  const { color, percentage, icon, iconColor } = props;
 
   const fillerStyles = {
     height: "100%",
@@ -14,9 +14,18 @@ export const ProgressBar = (props) => {
     textAlign: "right",
   };
 
+  const iconsStyles = {
+    position: "relative",
+    top: "0.1rem",
+    left: "1rem",
+    fontSize: "1.5rem",
+    marginRight: "1rem",
+    color: iconColor,
+  };
+
   return (
     <div className={styles.wrapperStyles}>
-      <div className={styles.icons}> {icon} </div>
+      <div style={iconsStyles}> {icon} </div>
       <div className={styles.containerStyles}>
         <div style={fillerStyles} />
       </div>

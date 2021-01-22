@@ -1,11 +1,9 @@
 import React from "react";
-import {
-  DiIllustrator,
-  DiCss3,
-  DiPhotoshop,
-  DiJavascript1,
-  DiReact,
-} from "react-icons/di";
+import { DiCss3, DiJavascript1, DiReact, DiScrum } from "react-icons/di";
+import { CgFigma } from "react-icons/cg";
+import { RiKeynoteLine } from "react-icons/ri";
+import { SiMicrosoftoffice, SiRedux, SiNextDotJs } from "react-icons/si";
+import { FaJira } from "react-icons/fa";
 import { ProgressBar } from "../ProgressBar/ProgressBar.component";
 import styles from "./Skills.module.css";
 
@@ -18,46 +16,75 @@ export const SkillsProfession = (props) => {
   const [rate5, color5] = ["99%", "#652de1"];
 
   return (
-    <div className={styles.skillsMain}>
+    <div className={styles.skillsMainProf}>
       <div className={styles.skillsWrapper}>
-        <div className={styles.title}> {title} </div>
-        <div>
-          <ProgressBar
-            color={color1}
-            icon={<DiIllustrator />}
-            percentage={rate1}
-          />
-          <ProgressBar
-            color={color2}
-            icon={<DiPhotoshop />}
-            percentage={rate2}
-          />
-          <ProgressBar
-            color={color5}
-            icon={<DiJavascript1 />}
-            percentage={rate5}
-          />
-          <ProgressBar color={color3} icon={<DiReact />} percentage={rate3} />
-          <ProgressBar color={color4} icon={<DiCss3 />} percentage={rate4} />
+        <div style={{ color: `#652de1` }} className={styles.title}>
+          {" "}
+          {title}{" "}
         </div>
         <div>
           <ProgressBar
             color={color1}
-            icon={<DiIllustrator />}
+            icon={<DiReact title="React" />}
             percentage={rate1}
+            iconColor={"#652de1"}
           />
           <ProgressBar
             color={color2}
-            icon={<DiPhotoshop />}
+            icon={<DiJavascript1 title="Javascript" />}
             percentage={rate2}
+            iconColor={"#652de1"}
           />
           <ProgressBar
             color={color5}
-            icon={<DiJavascript1 />}
+            icon={<RiKeynoteLine title="Keynote" />}
             percentage={rate5}
+            iconColor={"#652de1"}
           />
-          <ProgressBar color={color3} icon={<DiReact />} percentage={rate3} />
-          <ProgressBar color={color4} icon={<DiCss3 />} percentage={rate4} />
+          <ProgressBar
+            color={color3}
+            icon={<FaJira title="Jira" />}
+            percentage={rate3}
+            iconColor={"#652de1"}
+          />
+          <ProgressBar
+            color={color4}
+            icon={<DiCss3 title="CSS" />}
+            percentage={rate4}
+            iconColor={"#652de1"}
+          />
+        </div>
+        <div>
+          <ProgressBar
+            color={color1}
+            icon={<SiNextDotJs title="Next Js" />}
+            percentage={rate1}
+            iconColor={"#652de1"}
+          />
+          <ProgressBar
+            color={color2}
+            icon={<SiRedux title="Redux" />}
+            percentage={rate2}
+            iconColor={"#652de1"}
+          />
+          <ProgressBar
+            color={color5}
+            icon={<CgFigma title="Figma" />}
+            percentage={rate5}
+            iconColor={"#652de1"}
+          />
+          <ProgressBar
+            color={color3}
+            icon={<SiMicrosoftoffice title="MS Office" />}
+            percentage={rate3}
+            iconColor={"#652de1"}
+          />
+          <ProgressBar
+            color={color4}
+            icon={<DiScrum title="Scrum" />}
+            percentage={rate4}
+            iconColor={"#652de1"}
+          />
         </div>
       </div>
     </div>

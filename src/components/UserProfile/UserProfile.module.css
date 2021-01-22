@@ -13,6 +13,7 @@
   display: flex;
   width: 100%;
   grid-column: span 3;
+  height: 2rem;
 }
 
 .main {
@@ -24,9 +25,9 @@
 
 .mainStart {
   width: 100%;
-  background-color: gray;
+  background-color: lightgoldenrodyellow;
 }
 .mainCenter {
   width: 100%;
-  background-color: orange;
+  background-color: lightyellow;
 }

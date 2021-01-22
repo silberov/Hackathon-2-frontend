@@ -11,7 +11,7 @@ export const UserProfile = () => {
         <div className={styles.mainStart}> main start </div>
         <div className={styles.mainCenter}> main center </div>
         <div className={styles.mainEnd}>
-          <SkillsProfession title={"professional"} />
+          <SkillsProfession titleColor={"yellow"} title={"professional"} />
           <SkillsSoftware title={"software"} />
           <SkillsLanguages title={"languages"} />
         </div>
