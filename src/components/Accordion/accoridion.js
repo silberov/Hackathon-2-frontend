@@ -8,6 +8,20 @@ import {
   withStyles,
 } from "@material-ui/core/styles";
 
+const getMaxType = (array) => {
+  let max = 0;
+  let array1 = [];
+  array.forEach((array) => {
+    if (array.type > max) {
+      max = array.type;
+    }
+  });
+  for (let i = 0; i <= max; i++) {
+    array1[i] = i;
+  }
+  return array1;
+};
+
 const convertTypes = (tableName, typeNumber) => {
   if (tableName === "education") {
     switch (typeNumber) {
@@ -93,42 +107,55 @@ const useStyles = makeStyles((theme) => ({
 
 const AccordionComponent = ({ information, table }) => {
   const classes = useStyles();
+  let maxType = getMaxType(information);
+
   return (
     <div className="grid-rows">
       <div className={classes.root}>
         <StylesProvider injectFirst>
           <div className="title">{table}</div>
 
-          <Accordion>
-            <AccordionSummary
-              className={classes.accordionStyle}
-              expandIcon={
-                <img
-                  src="https://uploads-ssl.webflow.com/5f183b01ba28173d5efc8550/5f183b024ccb09363cec9a1f_icon-chevron-right.svg"
-                  alt=""
-                  class="expandable-arrow"
-                  style={{ transform: "rotate(-90deg)" }}
-                />
-              }
-            >
-              <div className="title-order">
-                <div className="description hover-class">{table}</div>
-                <div className="description-number hover-class">
-                  {information.length}
-                </div>
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              {/* {information.map((data) => {
-                  <div className="information">{data}</div>;
-                })} */}
-              <ul>
-                {information.map((data) => {
-                  return <li>{data.name}</li>;
-                })}
-              </ul>
-            </AccordionDetails>
-          </Accordion>
+          {maxType.map((typeD) => {
+            return (
+              <Accordion>
+                <AccordionSummary
+                  className={classes.accordionStyle}
+                  expandIcon={
+                    <img
+                      src="https://uploads-ssl.webflow.com/5f183b01ba28173d5efc8550/5f183b024ccb09363cec9a1f_icon-chevron-right.svg"
+                      alt=""
+                      class="expandable-arrow"
+                      style={{ transform: "rotate(-90deg)" }}
+                    />
+                  }
+                >
+                  <div className="title-order">
+                    <div className="description hover-class">
+                      {convertTypes(table, typeD)}
+                    </div>
+                    <div className="description-number hover-class">
+                      {
+                        information.filter(function (info) {
+                          return info.type === typeD;
+                        }).length
+                      }
+                    </div>
+                  </div>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <ul>
+                    {information
+                      .filter(function (info) {
+                        return info.type === typeD;
+                      })
+                      .map((data) => {
+                        return <li>{data.name}</li>;
+                      })}
+                  </ul>
+                </AccordionDetails>
+              </Accordion>
+            );
+          })}
         </StylesProvider>
       </div>
     </div>
