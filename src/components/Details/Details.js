@@ -5,13 +5,17 @@ const DetailsWrap = styled.div`
     margin: 10px 10px 20px 0;
 `
 
-function Details({headline, elements}) {
-    // console.log(elements);
+function Details({data}) {
+    //console.log("data", data);
+
+    const title = Object.keys(data)[0]
+    const content = data[title]
+    //console.log(title, content);
     return(
         <DetailsWrap>
-            <Healine>{headline}</Healine>
+            <Healine>{title}</Healine>
             <ListContainer>
-                {elements.map(item => <ListElements>{item}</ListElements>)}
+                {content.map(item => <ListElements>{item}</ListElements>)}
             </ListContainer>
         </DetailsWrap>
     );

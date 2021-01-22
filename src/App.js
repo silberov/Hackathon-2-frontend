@@ -83,11 +83,7 @@ function App() {
     <div className="App">
 
       <Profile person={user} />
-      <UserProfile />
-      <Details
-        headline={"contact info"}
-        elements={["+49 65 456 456", "esra@company.com"]}
-      />
+      {/* <UserProfile /> */}
     </div>
   );
 }
