@@ -9,6 +9,15 @@
   padding: 24px;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.li {
+  font-size: small;
+}
+
 .MuiAccordionSummary-content {
   justify-content: space-between;
   align-items: center;
@@ -21,10 +30,11 @@
 .title {
   border-bottom: 1px solid lightgray;
   font-size: small;
+  padding-bottom: 5px;
 }
 
 .description-number {
-  font-size: x-small;
+  font-size: small;
   padding-left: 10px;
   padding-bottom: 2px;
 }

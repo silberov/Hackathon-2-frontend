@@ -8,6 +8,50 @@ import {
   withStyles,
 } from "@material-ui/core/styles";
 
+const convertTypes = (tableName, typeNumber) => {
+  if (tableName === "education") {
+    switch (typeNumber) {
+      case 0:
+        return "degree";
+      case 1:
+        return "special knowledge";
+    }
+  }
+  if (tableName === "experience") {
+    switch (typeNumber) {
+      case 0:
+        return "client";
+      case 1:
+        return "industry";
+      case 2:
+        return "network";
+    }
+  }
+  if (tableName === "skills") {
+    switch (typeNumber) {
+      case 0:
+        return "software";
+      case 1:
+        return "languages";
+      case 2:
+        return "professional";
+      case 3:
+        return "softskills";
+    }
+  }
+
+  if (tableName === "wishes") {
+    switch (typeNumber) {
+      case 0:
+        return "projects";
+      case 1:
+        return "fields";
+      case 2:
+        return "further education";
+    }
+  }
+};
+
 const Accordion = withStyles({
   root: {
     border: "1px solid rgba(0, 0, 0, .125)",
@@ -47,44 +91,47 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AccordionComponent = ({ information }) => {
+const AccordionComponent = ({ information, table }) => {
   const classes = useStyles();
   return (
-    information.length > 0 && (
-      <div className="grid-rows">
-        {information.map((data, index) => {
-          return (
-            <div className={classes.root}>
-              <StylesProvider injectFirst>
-                <div className="title">Title</div>
+    <div className="grid-rows">
+      <div className={classes.root}>
+        <StylesProvider injectFirst>
+          <div className="title">{table}</div>
 
-                <Accordion>
-                  <AccordionSummary
-                    className={classes.accordionStyle}
-                    expandIcon={
-                      <img
-                        src="https://uploads-ssl.webflow.com/5f183b01ba28173d5efc8550/5f183b024ccb09363cec9a1f_icon-chevron-right.svg"
-                        alt=""
-                        class="expandable-arrow"
-                        style={{ transform: "rotate(-90deg)" }}
-                      />
-                    }
-                  >
-                    <div className="title-order">
-                      <div className="description hover-class">description</div>
-                      <div className="description-number hover-class">2</div>
-                    </div>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <div dangerouslySetInnerHTML={{ __html: data.content }} />
-                  </AccordionDetails>
-                </Accordion>
-              </StylesProvider>
-            </div>
-          );
-        })}
+          <Accordion>
+            <AccordionSummary
+              className={classes.accordionStyle}
+              expandIcon={
+                <img
+                  src="https://uploads-ssl.webflow.com/5f183b01ba28173d5efc8550/5f183b024ccb09363cec9a1f_icon-chevron-right.svg"
+                  alt=""
+                  class="expandable-arrow"
+                  style={{ transform: "rotate(-90deg)" }}
+                />
+              }
+            >
+              <div className="title-order">
+                <div className="description hover-class">{table}</div>
+                <div className="description-number hover-class">
+                  {information.length}
+                </div>
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+              {/* {information.map((data) => {
+                  <div className="information">{data}</div>;
+                })} */}
+              <ul>
+                {information.map((data) => {
+                  return <li>{data.name}</li>;
+                })}
+              </ul>
+            </AccordionDetails>
+          </Accordion>
+        </StylesProvider>
       </div>
-    )
+    </div>
   );
 };
 
