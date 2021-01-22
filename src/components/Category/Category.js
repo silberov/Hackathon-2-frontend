@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import colors from "../../utils/colors";
 import { List } from "../List/List";
-import { Healine } from "../Typography";
+import { LineHeader } from "../Typography";
 
 const CategoryinnerWrap = styled.div`
   display: flex;
@@ -18,13 +19,13 @@ function Category({ data, oneLine }) {
     //console.log(data[title])
   return (
     <CategoryWrap>
-      <Healine modifiers={["primery"]}>{title}</Healine>
-      <hr />
+      <LineHeader>{title}</LineHeader>
       <CategoryinnerWrap>
           {data[title].map(element => <List data={element} isLine={oneLine} />)}
       </CategoryinnerWrap>
     </CategoryWrap>
   );
 }
+
 
 export default Category;

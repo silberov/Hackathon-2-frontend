@@ -41,6 +41,12 @@ const LIST_TYPE_MODIFIERS = {
   `
 }
 
+// const LINE_MODIFIERS = {
+//   line: () => css`
+    
+//   `
+// }
+
 export const MainHeader = styled.h1`
   font-family: ${primaryFont};
   font-size: 3.25rem;
@@ -120,3 +126,17 @@ export const P = styled.p`
     ${applyStyleModifiers(ALIGNMENT_MODIFIERS)};
     ${applyStyleModifiers(COLOR_MODIFIERS)};
 `;
+
+const LineContainer = styled.div`
+    width: 100%;
+    border-bottom: solid 1px ${colors.primeryGray};
+    margin-bottom: 20px;
+`
+
+export function LineHeader (props) {
+    return(
+        <LineContainer>
+            <Healine modifiers={["primery"]}>{props.children}</Healine>
+        </LineContainer>
+    );
+}
