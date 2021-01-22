@@ -5,6 +5,7 @@ import { Healine } from "../Typography";
 const CategoryinnerWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 const CategoryWrap = styled.div`
@@ -12,15 +13,15 @@ margin: 20px 20px 35px 20px;
 `
 
 function Category({ data, oneLine }) {
-    console.log(oneLine)
+    
+    const title = Object.keys(data)[0]
+    console.log(data[title])
   return (
     <CategoryWrap>
-      <Healine modifiers={["primery"]}>{data.categoryname}</Healine>
+      <Healine modifiers={["primery"]}>{title}</Healine>
       <hr />
       <CategoryinnerWrap>
-        {data.categorydata.map((item) => (
-          <List isLine={oneLine} title={item.title} elements={item.elements} />
-        ))}
+          {data[title].map(element => <List data={element} isLine={oneLine} />)}
       </CategoryinnerWrap>
     </CategoryWrap>
   );

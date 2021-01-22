@@ -5,41 +5,41 @@ import colors from "../utils/colors";
 export const primaryFont = "TheSansOsF, sans-serif";
 
 const FONT_WEIGHT_MODIFIERS = {
-    //font-weight
-    light: () => css`
-      font-weight: 100;
-    `,
-    regular: () => css`
-      font-weight: 400;
-    `,
-    bold: () => css`
-      font-weight: 700;
-    `,
-  };
+  //font-weight
+  light: () => css`
+    font-weight: 100;
+  `,
+  regular: () => css`
+    font-weight: 400;
+  `,
+  bold: () => css`
+    font-weight: 700;
+  `,
+};
 
-  const COLOR_MODIFIERS = {
-      light: () => css`
-       color: ${colors.lightGray};
-      `,
-      text: () => css`
-      color: ${colors.text};
-      `,
-      primery: () => css`
-      color: ${colors.primeryGray};
-      `
-  }
+const COLOR_MODIFIERS = {
+  light: () => css`
+    color: ${colors.lightGray};
+  `,
+  text: () => css`
+  color: ${colors.text};
+  `,
+  primery: () => css`
+  color: ${colors.primeryGray};
+  `
+}
 
-  const ALIGNMENT_MODIFIERS = {
-    center: () => css`
-    text-align: center;
-    `
-  }
+const ALIGNMENT_MODIFIERS = {
+  center: () => css`
+  text-align: center;
+  `
+}
 
-  const LIST_TYPE_MODIFIERS = {
-    line: () => css`
-    display: inline;
-    `
-  }
+const LIST_TYPE_MODIFIERS = {
+  line: () => css`
+  display: inline;
+  `
+}
 
 export const MainHeader = styled.h1`
   font-family: ${primaryFont};
@@ -118,4 +118,5 @@ export const P = styled.p`
     letter-spacing: normal;
     ${applyStyleModifiers(FONT_WEIGHT_MODIFIERS)};
     ${applyStyleModifiers(ALIGNMENT_MODIFIERS)};
+    ${applyStyleModifiers(COLOR_MODIFIERS)};
 `;
