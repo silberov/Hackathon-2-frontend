@@ -9,7 +9,7 @@ function Details({data}) {
     //console.log("data", data);
 
     const title = Object.keys(data)[0]
-    const content = data[title]
+    const content = data[title] || [];
     //console.log(title, content);
     return(
         <DetailsWrap>

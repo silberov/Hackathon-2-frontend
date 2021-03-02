@@ -1,18 +1,19 @@
 import useInputState from "../../hooks/useInput";
+import { P } from "../Typography";
 
 export const TextInput = ({
     initialValue = '',
     editable = true,
-    inputRef,
+    //inputRef,
     ...props
 }) => {
     const [userInput, setUserInput] = useInputState(initialValue);
     // console.log(inputRef);
     return !editable ? (
-        <p style={{ width: '90%', cursor: 'pointer' }}>{userInput}</p>
+        <P style={{ width: '90%', cursor: 'pointer' }}>{userInput}</P>
     ) : (
         <TextInput
-            ref={inputRef}
+            //ref={inputRef}
             value={userInput}
             onChange={setUserInput}
             {...props}

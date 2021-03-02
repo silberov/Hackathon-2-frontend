@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Details from "../Details/Details";
+import { TextInput } from "../Input/Input";
 import { P } from "../Typography";
 
 const ProfileImg = styled.img`
@@ -11,11 +12,12 @@ margin: 50px 20px 35px 20px;
 `
 
 
-function Personal ({name, details}) {
+function Personal ({name, details, isEditable=false}) {
 console.log("details", details)
     return(
         <Wrap>
         <ProfileImg />
+        {/* {isEditable ? <TextInput initialValue={name}/> : <P modifiers={["primery","bold"]}>{name}</P>} */}
         <P modifiers={["primery","bold"]}>{name}</P>
         {details.map(item => <Details data={item}/>)}
         </Wrap>
