@@ -22,28 +22,43 @@ const COLOR_MODIFIERS = {
     color: ${colors.lightGray};
   `,
   text: () => css`
-  color: ${colors.text};
+    color: ${colors.text};
   `,
   primery: () => css`
-  color: ${colors.primeryGray};
-  `
-}
+    color: ${colors.primeryGray};
+  `,
+};
+
+const SIZE_MODIFIERS = {
+  small: () => css`
+    font-size: 0.875rem; //14
+  `,
+  normal: () => css`
+    font-size: 1rem; //16
+  `,
+  large: () => css`
+    font-size: 1.125rem; //18
+  `,
+  xlarge: () => css`
+    font-size: 1.25rem; //20
+  `,
+};
 
 const ALIGNMENT_MODIFIERS = {
   center: () => css`
-  text-align: center;
-  `
-}
+    text-align: center;
+  `,
+};
 
 const LIST_TYPE_MODIFIERS = {
   line: () => css`
-  display: inline;
-  `
-}
+    display: inline;
+  `,
+};
 
 // const LINE_MODIFIERS = {
 //   line: () => css`
-    
+
 //   `
 // }
 
@@ -71,19 +86,18 @@ export const Healine = styled.h2`
   letter-spacing: 0.2px;
   font-weight: 700;
   text-align: left;
-  color: ${colors.lightGray};
+  color: ${(props) => (props.color ? props.color : colors.lightGray)};
   margin: ${(props) => (props.margin ? props.margin : 0)};
   ${applyStyleModifiers(FONT_WEIGHT_MODIFIERS)};
   ${applyStyleModifiers(ALIGNMENT_MODIFIERS)};
   ${applyStyleModifiers(COLOR_MODIFIERS)};
 `;
 
-
-export const SubHeader= styled.h3`
+export const SubHeader = styled.h3`
   font-family: ${primaryFont};
   font-size: 3rem;
   line-height: 1.25;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   font-weight: 700;
   text-align: left;
   padding-bottom: 10px;
@@ -94,49 +108,83 @@ export const SubHeader= styled.h3`
 `;
 
 export const ListContainer = styled.ul`
-    text-align: left;
-    /* display: flex;
-
-    align-content: flex-start; */
-    `
+  text-align: left;
+`;
 
 export const ListElements = styled.li`
-    font-size: 1.2rem;
-    list-style-type: none;
-    line-height: 1.5;
-    color: ${colors.text};
-    font-weight: 400;
-    text-align: left;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: normal;
-    ${applyStyleModifiers(LIST_TYPE_MODIFIERS)};
-`
+  font-size: 1.2rem;
+  list-style-type: none;
+  line-height: 1.5;
+  color: ${colors.text};
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  ${applyStyleModifiers(LIST_TYPE_MODIFIERS)};
+`;
 
 export const P = styled.p`
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: ${colors.text};
-    font-weight: 400;
-    text-align: left;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: normal;
-    ${applyStyleModifiers(FONT_WEIGHT_MODIFIERS)};
-    ${applyStyleModifiers(ALIGNMENT_MODIFIERS)};
-    ${applyStyleModifiers(COLOR_MODIFIERS)};
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: ${colors.text};
+  font-weight: 400;
+  text-align: left;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  ${applyStyleModifiers(FONT_WEIGHT_MODIFIERS)};
+  ${applyStyleModifiers(ALIGNMENT_MODIFIERS)};
+  ${applyStyleModifiers(COLOR_MODIFIERS)};
+  ${applyStyleModifiers(SIZE_MODIFIERS)};
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+  margin: 5px 0;
+  padding: 3px 7px;
+  border: none;
+  background-color: ${colors.lightBG};
+  &:focus {
+    background-color: ${colors.hoverBG};
+    border: none;
+    outline: none;
+  }
 `;
 
 const LineContainer = styled.div`
-    width: 100%;
-    border-bottom: solid 1px ${colors.primeryGray};
-    margin-bottom: 20px;
-`
+  width: 100%;
+  border-bottom: solid 1px ${colors.primeryGray};
+  margin-bottom: 20px;
+`;
 
-export function LineHeader (props) {
-    return(
-        <LineContainer>
-            <Healine modifiers={["primery"]}>{props.children}</Healine>
-        </LineContainer>
-    );
+export function LineHeader(props) {
+  return (
+    <LineContainer>
+      <Healine modifiers={["primery"]}>{props.children}</Healine>
+    </LineContainer>
+  );
 }
+
+export const Select = styled.select`
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+  margin: 5px 0;
+  padding: 7px 5px;
+  border: none;
+  background-color: ${colors.lightBG};
+  &:focus {
+    background-color: ${colors.hoverBG};
+    border: none;
+    outline: none;
+  }
+  &.disabled {
+    color: red; //not working
+  }
+`;

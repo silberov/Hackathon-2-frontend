@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import useAsyncError from './useAsyncError';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "/api";
 
 export default function useCrud(path) {
 	const [error, setError] = useState('');

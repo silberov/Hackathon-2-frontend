@@ -10,22 +10,26 @@ const CategoryinnerWrap = styled.div`
 `;
 
 const CategoryWrap = styled.div`
-margin: 20px 20px 35px 20px;
-`
+  margin: 20px 20px 35px 20px;
+`;
 
-function Category({ data, oneLine }) {
-    
-    const title = Object.keys(data)[0]
-    //console.log(data[title])
+function Category({ isEditable = false, title, data, oneLine = false }) {
+  // {[....]}
+  //onst title = Object.keys(data)[0]
+  // const title = data.name;
+  // ["id", "name"] === "id "
+  //console.log(data[title])
+  //console.log("data", data);
   return (
     <CategoryWrap>
-      <LineHeader>{title}</LineHeader>
+      {!isEditable && <LineHeader>{title}</LineHeader>}
       <CategoryinnerWrap>
-          {data[title].map(element => <List data={element} isLine={oneLine} />)}
+        {data.map((element) => (
+          <List data={element} isLine={oneLine} isEditable={isEditable} />
+        ))}
       </CategoryinnerWrap>
     </CategoryWrap>
   );
 }
-
 
 export default Category;

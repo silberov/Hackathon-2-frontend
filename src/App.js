@@ -1,12 +1,13 @@
 import "./App.css";
-import Category from "./components/Category/Category";
-import Details from "./components/Details/Details";
-import { List } from "./components/List/List";
-import Personal from "./components/Personal/Personal";
+
 import Profile from "./pages/Profile";
+import useCrud from "./hooks/useCrud";
 
 import { UserProfile } from "./components/UserProfile/UserProfile.component";
-
+import EditProfile from "./pages/EditProfile";
+import { useState } from "react";
+import { Tubs } from "./components/tubs/Tubs";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const user = {
   id: 4,
@@ -19,36 +20,41 @@ const user = {
   office: "Berlin",
   position: "Trainee Social Media Manager",
   positionId: 2,
-  experience: [{
-    industries: [
-      "politics",
-      "associations",
-      "non-profit",
-      "automotive",
-      "social media",
-      "ministries",
-      "tourism",
-      "energy",
-    ]},
-    {Clients: [
-      "BVR",
-      "DZ-Bank",
-      "Share",
-      "Handwerk (ZDH)",
-      "Felix",
-      "Burda Stiftung",
-      "Opel",
-      "Coca Cola",
-      "Vio Bio",
-      "Telekom",
-      "Storck",
-      "BurdaForward",
-      "Bayer",
-      "IWO",
-      "BVG",
-    ]},
+  experience: [
+    {
+      industries: [
+        "politics",
+        "associations",
+        "non-profit",
+        "automotive",
+        "social media",
+        "ministries",
+        "tourism",
+        "energy",
+      ],
+    },
+    {
+      Clients: [
+        "BVR",
+        "DZ-Bank",
+        "Share",
+        "Handwerk (ZDH)",
+        "Felix",
+        "Burda Stiftung",
+        "Opel",
+        "Coca Cola",
+        "Vio Bio",
+        "Telekom",
+        "Storck",
+        "BurdaForward",
+        "Bayer",
+        "IWO",
+        "BVG",
+      ],
+    },
   ],
-  skill:[{
+  skill: [
+    {
       Software: [
         "Figma",
         "Miro",
@@ -59,8 +65,10 @@ const user = {
         "Merlin",
         "Projektron",
         "Maconomy",
-      ]},
-      {Professional: [
+      ],
+    },
+    {
+      Professional: [
         "UX/UI",
         "Webesite Konzeption",
         "Webesite Launch",
@@ -69,21 +77,36 @@ const user = {
         "Agile Prozesse",
         "Tracking",
         "CMS",
-      ]},
+      ],
+    },
 
-      {Languages: ["Englisch", "Französisch", "Türkisch"]},
-    ],
+    { Languages: ["Englisch", "Französisch", "Türkisch"] },
+  ],
 
   education: ["BWL, Management"],
   hobby: ["paly games", "workout", "paint", "read books"],
 };
 
 function App() {
+  const [editMode, setEditmode] = useState(true);
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  const { items, loading } = useCrud("/employee");
+  console.log("items", items);
+
   return (
     <div className="App">
+      <Router>
+        {loading ? (
+          <h1>loading...</h1>
+        ) : (
+          <Profile isEditable={editMode} person={user} />
+        )}
 
-      <Profile person={user} />
-      {/* <UserProfile /> */}
+        {/* <Profile isEditable={true} person={user} /> */}
+        {/* <EditProfile /> */}
+        {/* <UserProfile /> */}
+      </Router>
     </div>
   );
 }
