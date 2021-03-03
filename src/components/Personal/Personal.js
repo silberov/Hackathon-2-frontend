@@ -4,26 +4,43 @@ import { TextInput } from "../Input/Input";
 import { P } from "../Typography";
 
 const ProfileImg = styled.img`
-    width: 300px;
-    height: 300px;
-`
+  width: 300px;
+  height: 300px;
+`;
 const Wrap = styled.div`
-margin: 50px 20px 35px 20px;
-`
+  width: 285px;
+  margin: 50px 20px 35px 20px;
+`;
 
+function NameInput({ firstName, lastName }) {
+  console.log("name", firstName, lastName);
+  return (
+    <>
+      {" "}
+      <TextInput initialValue={firstName} />
+      <TextInput initialValue={lastName} />{" "}
+    </>
+  );
+}
 
-function Personal ({name, details, isEditable=false}) {
-console.log("details", details)
-    return(
-        <Wrap>
-        <ProfileImg />
-        {/* {isEditable ? <TextInput initialValue={name}/> : <P modifiers={["primery","bold"]}>{name}</P>} */}
-        <P modifiers={["primery","bold"]}>{name}</P>
-        {details.map(item => <Details data={item}/>)}
-        </Wrap>
-    );
+function Personal({ firstName, lastName, details, isEditable = true }) {
+  console.log("details", details);
+  return (
+    <Wrap>
+      <ProfileImg />
+      {isEditable ? (
+        <NameInput firstName={firstName} lastName={lastName} />
+      ) : (
+        <P modifiers={["primery", "bold"]}>
+          {lastName}, {firstName}
+        </P>
+      )}
 
-};
-
+      {details.map((item, index) => (
+        <Details key={index} isEditable={isEditable} data={item} />
+      ))}
+    </Wrap>
+  );
+}
 
 export default Personal;

@@ -109,9 +109,6 @@ export const SubHeader = styled.h3`
 
 export const ListContainer = styled.ul`
   text-align: left;
-  /* display: flex;
-
-    align-content: flex-start; */
 `;
 
 export const ListElements = styled.li`
@@ -142,6 +139,23 @@ export const P = styled.p`
   ${applyStyleModifiers(SIZE_MODIFIERS)};
 `;
 
+export const Input = styled.input`
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+  margin: 5px 0;
+  padding: 3px 7px;
+  border: none;
+  background-color: ${colors.lightBG};
+  &:focus {
+    background-color: ${colors.hoverBG};
+    border: none;
+    outline: none;
+  }
+`;
+
 const LineContainer = styled.div`
   width: 100%;
   border-bottom: solid 1px ${colors.primeryGray};
@@ -155,3 +169,22 @@ export function LineHeader(props) {
     </LineContainer>
   );
 }
+
+export const Select = styled.select`
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+  margin: 5px 0;
+  padding: 7px 5px;
+  border: none;
+  background-color: ${colors.lightBG};
+  &:focus {
+    background-color: ${colors.hoverBG};
+    border: none;
+    outline: none;
+  }
+  &.disabled {
+    color: red; //not working
+  }
+`;

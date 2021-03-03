@@ -1,39 +1,68 @@
+import { Link, NavLink, Router } from "react-router-dom";
 import styled from "styled-components";
 import colors from "../../utils/colors";
 import { Healine } from "../Typography";
 
-const FlexTubs = styled.div`
+const FlexTubs = styled.ul`
+  width: 100%;
   display: flex;
   justify-content: space-between;
 `;
 
-export function Tubs({ titles, active }) {
-  return (
-    <FlexTubs>
-      {titles.map((tub) => (
-        <SingleTub text={tub} />
-      ))}
-    </FlexTubs>
-  );
-}
-
-const TubBox = styled.div`
-  //padding: 0 50px 1px;
+const TubBox = styled.li`
+  text-align: center;
+  display: inline-block;
   width: 25%;
+`;
+
+const activeClassName = "nav-item-active";
+const StyledNavLink = styled(NavLink).attrs({ activeClassName })`
+  display: inline-block;
+  font-weight: 500;
+  color: ${colors.lightGray};
   border-bottom: 2px solid ${colors.lightGray};
-  color: ${colors.primeryGray};
+  padding-bottom: 5px;
+  width: 100%;
+  text-decoration: none;
+  &.${activeClassName} {
+    color: ${colors.primeryGray};
+    border-bottom: 2px solid ${colors.primeryGray};
+  }
   &:hover {
     cursor: pointer;
-    //padding: 0 50px;
-    border-bottom: 2px solid ${colors.primeryGray};
+    //border-bottom: 2px solid ${colors.primeryGray};
     color: ${colors.primeryGray};
   }
 `;
 
-function SingleTub({ text }) {
+export function Tubs() {
   return (
-    <TubBox>
-      <Healine modifiers={["center"]}>{text}</Healine>
-    </TubBox>
+    <>
+      <nav>
+        <FlexTubs>
+          <TubBox>
+            <StyledNavLink exact to="/skills">
+              Skills
+            </StyledNavLink>
+          </TubBox>
+          <TubBox>
+            <StyledNavLink exact to="/experience">
+              Experience
+            </StyledNavLink>
+          </TubBox>
+          <TubBox>
+            <StyledNavLink exact to="/">
+              {/* to="/intrests"  to="/wishes"*/}
+              Intrests
+            </StyledNavLink>
+          </TubBox>
+          <TubBox>
+            <StyledNavLink exact to="/">
+              Wishes
+            </StyledNavLink>
+          </TubBox>
+        </FlexTubs>
+      </nav>
+    </>
   );
 }
