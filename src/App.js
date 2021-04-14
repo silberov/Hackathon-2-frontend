@@ -89,9 +89,9 @@ const user = {
 
 function App() {
   const [editMode, setEditmode] = useState(true);
-  const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedUser, setSelectedUser] = useState(27);
 
-  const { items, loading } = useCrud("/employee");
+  const { items, loading } = useCrud(`/employee/${selectedUser}`);
   console.log("items", items);
 
   return (
@@ -100,7 +100,7 @@ function App() {
         {loading ? (
           <h1>loading...</h1>
         ) : (
-          <Profile isEditable={editMode} person={user} />
+          <Profile isEditable={editMode} person={items} />
         )}
 
         {/* <Profile isEditable={true} person={user} /> */}

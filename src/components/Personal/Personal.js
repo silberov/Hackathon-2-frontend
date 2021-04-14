@@ -13,7 +13,7 @@ const Wrap = styled.div`
 `;
 
 function NameInput({ firstName, lastName }) {
-  console.log("name", firstName, lastName);
+  // console.log("name", firstName, lastName);
   return (
     <>
       {" "}
