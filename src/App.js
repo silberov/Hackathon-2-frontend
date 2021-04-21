@@ -8,6 +8,7 @@ import EditProfile from "./pages/EditProfile";
 import { useState } from "react";
 import { Tubs } from "./components/tubs/Tubs";
 import { BrowserRouter as Router } from "react-router-dom";
+import Results from "./pages/Results";
 
 const user = {
   id: 4,
@@ -89,9 +90,9 @@ const user = {
 
 function App() {
   const [editMode, setEditmode] = useState(true);
-  const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedUser, setSelectedUser] = useState(30);
 
-  const { items, loading } = useCrud("/employee");
+  const { items, loading } = useCrud(`/employee/${selectedUser}`);
   console.log("items", items);
 
   return (
@@ -100,7 +101,7 @@ function App() {
         {loading ? (
           <h1>loading...</h1>
         ) : (
-          <Profile isEditable={editMode} person={user} />
+          <Profile isEditable={editMode} person={items} />
         )}
 
         {/* <Profile isEditable={true} person={user} /> */}

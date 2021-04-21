@@ -13,12 +13,13 @@ const Wrap = styled.div`
 `;
 
 function NameInput({ firstName, lastName }) {
-  console.log("name", firstName, lastName);
+  // console.log("name", firstName, lastName);
   return (
     <>
-      {" "}
-      <TextInput initialValue={firstName} />
-      <TextInput initialValue={lastName} />{" "}
+      <form>
+        <TextInput initialValue={firstName} />
+        <TextInput initialValue={lastName} />
+      </form>
     </>
   );
 }

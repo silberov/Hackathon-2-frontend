@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import colors from "../../utils/colors";
+import AddButton from "../Buttons/Buttons";
 import { ListElements, ListContainer, SubHeader, Select } from "../Typography";
 
 const ListWrap = styled.div`
@@ -61,6 +62,7 @@ export function List({ isEditable, data, isLine }) {
                 <option value={item.id}>{item.name}</option>
               ))}
           </Select>
+          <AddButton />
         </ListElements>
       </ListContainer>
     </ListWrap>
