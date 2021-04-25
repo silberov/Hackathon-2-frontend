@@ -90,7 +90,7 @@ const user = {
 
 function App() {
   const [editMode, setEditmode] = useState(true);
-  const [selectedUser, setSelectedUser] = useState(30);
+  const [selectedUser, setSelectedUser] = useState(3);
 
   const { items, loading } = useCrud(`/employee/${selectedUser}`);
   console.log("items", items);
