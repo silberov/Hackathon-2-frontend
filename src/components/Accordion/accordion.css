@@ -1,0 +1,100 @@
+.grid-rows {
+  display: grid;
+  align-items: center;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 24px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  padding: 24px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.li {
+  font-size: small;
+}
+
+.MuiAccordionSummary-content {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MuiAccordionSummary-expandIcon.Mui-expanded {
+  transform: rotate(180deg);
+}
+
+.title {
+  border-bottom: 1px solid lightgray;
+  font-size: small;
+  padding-bottom: 5px;
+}
+
+.description-number {
+  font-size: small;
+  padding-left: 10px;
+  padding-bottom: 2px;
+}
+
+.title-order {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.left-side {
+  display: flex;
+}
+
+.right-side {
+  display: flex;
+}
+
+.heading {
+  display: flex;
+  flex: 1;
+  padding-left: 1.5rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.hover-class:hover {
+  color: gray;
+}
+
+.date {
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.date:hover {
+  color: #068466;
+}
+
+.expandable-arrow {
+  display: block;
+  color: #333;
+  border: 0;
+  height: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .heading {
+    font-size: 1.1rem;
+  }
+  .date {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heading {
+    font-size: 0.8rem;
+  }
+  .date {
+    font-size: 0.7rem;
+  }
+}
