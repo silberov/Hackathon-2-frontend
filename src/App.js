@@ -7,7 +7,12 @@ import { UserProfile } from "./components/UserProfile/UserProfile.component";
 import EditProfile from "./pages/EditProfile";
 import { useState } from "react";
 import { Tubs } from "./components/tubs/Tubs";
-import { BrowserRouter as Router } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import Results from "./pages/Results";
 
 const user = {
@@ -101,7 +106,17 @@ function App() {
         {loading ? (
           <h1>loading...</h1>
         ) : (
-          <Profile isEditable={editMode} person={items} />
+          <>
+          {/* <Profile isEditable={editMode} person={items} /> */}
+          <NavLink to="/results">
+          <h3>Results</h3>
+          </NavLink>
+          <Switch>
+            <Route exact path="/results">
+              <Results />
+            </Route>
+          </Switch>
+          </>
         )}
 
         {/* <Profile isEditable={true} person={user} /> */}

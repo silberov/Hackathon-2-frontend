@@ -7,15 +7,34 @@ const SmallImage = styled.img`
   margin: 15px;
 `;
 
-function EmployeeCard({ name, url, position, location, department }) {
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 350px;
+  margin: 10px;
+`;
+
+const TextContainer = styled.div`
+  padding-left: 15px;
+`;
+
+
+function EmployeeCard({ id, name, url, position, location, department }) {
   return (
     <>
-      <SmallImage src={url} />
+
+    <CardContainer>
+      <SmallImage 
+      src={url} />
+      <TextContainer>
       <P modifiers={["primery", "bold"]}>{name}</P>
       <P>{position}</P>
       <P>
         {location}, {department}
       </P>
+      </TextContainer>
+      </CardContainer>
     </>
   );
 }
