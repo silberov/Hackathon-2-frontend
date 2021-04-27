@@ -105,18 +105,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AccordionComponent = ({ information, table }) => {
+const AccordionComponent = ({ employeeName, type, title, info }) => {
   const classes = useStyles();
-  let maxType = getMaxType(information);
+  // let maxType = getMaxType(information);
 
   return (
     <div className="grid-rows">
       <div className={classes.root}>
+        <h3>{employeeName}</h3>
+        <br />
         <StylesProvider injectFirst>
-          <div className="title">{table}</div>
+          <div className="title">{type}</div>
 
-          {maxType.map((typeD) => {
-            return (
+          {/* {maxType.map((typeD) => { */}
+            {/* return ( */}
+            {title.map((data, index) => {
+              return (
               <Accordion>
                 <AccordionSummary
                   className={classes.accordionStyle}
@@ -131,31 +135,25 @@ const AccordionComponent = ({ information, table }) => {
                 >
                   <div className="title-order">
                     <div className="description hover-class">
-                      {convertTypes(table, typeD)}
+               
+                      {data}
                     </div>
                     <div className="description-number hover-class">
-                      {
-                        information.filter(function (info) {
-                          return info.type === typeD;
-                        }).length
-                      }
                     </div>
                   </div>
                 </AccordionSummary>
+
                 <AccordionDetails>
                   <ul>
-                    {information
-                      .filter(function (info) {
-                        return info.type === typeD;
-                      })
-                      .map((data) => {
-                        return <li>{data.name}</li>;
-                      })}
+                    {info[index].map(info => {
+                      return <li>{  }</li>
+                    })}
                   </ul>
-                </AccordionDetails>
-              </Accordion>
-            );
-          })}
+                </AccordionDetails> 
+
+             </Accordion>
+             );
+        })}
         </StylesProvider>
       </div>
     </div>

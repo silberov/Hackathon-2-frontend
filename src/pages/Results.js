@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import EmployeeCard from "../components/EmployeeCard/EmployeeCard";
-import Accordion from "../components/Accordion/accoridion";
+import AccordionComponent from "../components/Accordion/accoridion";
 import React, { useState, useEffect } from "react";
 
 const PeopleContainer = styled.div`
@@ -9,12 +9,12 @@ const PeopleContainer = styled.div`
 `;
 
 const LeftSide = styled.div`
-  width: 20%;
+  width: 30%;
   float: left;
 `;
 
 const RightSide = styled.div`
-  width: 80%;
+  width: 70%;
   float: right;
 `;
 
@@ -31,6 +31,8 @@ function Results(props) {
     .then(resp => resp.json())
     .then((data) => {
         setEmployeesInfo(data);
+      
+        //to randomly select at the beginning an Employee to display
         setSelectedEmployeeId(Math.floor(Math.random() * (data.length) + 1));
         console.log("employees Info:", employeesInfo)
       })
@@ -55,13 +57,18 @@ function Results(props) {
     // }
 
 
-
   return (
     <>
 
-    {/* <Accordion /> */}
     <LeftSide>
+
     <h1>Accordion</h1>
+    <AccordionComponent 
+    employeeName={`${selectedEmployeeInfo.last_name}, ${selectedEmployeeInfo.name}`}
+    type="skill"
+    title={["software", "professional"]}
+    info={[["asddsa", "asdads", "asdadda"],["1", "2", "3"]]}
+    />
     </LeftSide>
 
     <RightSide>
